@@ -78,13 +78,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\OpenGL\Learn OpenGL\OpenGL\Links\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\OpenGL\Learn OpenGL\OpenGL\Links\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\OpenGL\LearnOpenGL\OpenGL\Links\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\OpenGL\LearnOpenGL\OpenGL\Links\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\OpenGL\Learn OpenGL\OpenGL\Links\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\OpenGL\Learn OpenGL\OpenGL\Links\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\OpenGL\LearnOpenGL\OpenGL\Links\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\OpenGL\LearnOpenGL\OpenGL\Links\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
