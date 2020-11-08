@@ -24,6 +24,7 @@ const char* fragmentShaderSource = "#version 330 core\n"
 
 int main()
 {
+#pragma region Init GLFW & GLAD
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -44,7 +45,8 @@ int main()
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
-
+#pragma endregion
+#pragma region Init Shaders
     int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
     glCompileShader(vertexShader);
@@ -76,6 +78,7 @@ int main()
     }
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
+#pragma endregion
 
     float vertices[] = {
          0.5f,  0.5f, 0.0f,
@@ -87,11 +90,12 @@ int main()
         0, 1, 3,
         1, 2, 3
     };
+#pragma region Init VBO, VAO, EBO
     unsigned int VBO, VAO, EBO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
-    
+
     glBindVertexArray(VAO);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -103,10 +107,10 @@ int main()
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    
+
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
-
+#pragma endregion
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
